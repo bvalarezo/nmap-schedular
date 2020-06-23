@@ -5,7 +5,7 @@ Schedule an nmap job
 - nmap
 - at
 ## FAQ
-### How do I install `at(1)`
+### How do I install `at(1)`?
 On apt
 ```
   # apt update && apt install at
