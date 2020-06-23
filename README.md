@@ -12,6 +12,6 @@ On apt
 ``` 
 After, you install `at(1)`, make sure you enable the `atd` daemon.
 ```
-  # systemctl eable atd
+  # systemctl enable atd
   # systemctl start atd
 ```
