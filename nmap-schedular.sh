@@ -91,7 +91,7 @@ fi
 #make dir
 if [ ! -d "$PROJECT" ]; then
    mkdir $PROJECT
-   echo "\e[90m$PROJECT has been created in your working path\e[0m"
+   echo -e "\e[90m$PROJECT has been created in your working path\e[0m"
 else
    echo -e "\e[1;33mWarning: Directory already exists!\e[0m"
    echo -e "\e[90mSelecting preexisting directory...\e[0m"
@@ -151,6 +151,7 @@ fi
 #TODO
 
 # Prompt time
+echo -ne "\e[94m"
 echo "Scheduling is done via the 'at' command. Syntax examples can be found below:"
 echo ""
 echo "Schedule Immediately: now"
@@ -166,6 +167,7 @@ echo "to run a job at 10:00am on July 31, you would do"
 echo "10am Jul 31"
 echo "and to run a job at 1am tomorrow, you would do"
 echo "1am tomorrow"
+echo -ne "\e[0m"
 echo ""
 echo -n "When do you want to schedule the scan for? (USE PROPER SYNTAX): "
 read TIME
