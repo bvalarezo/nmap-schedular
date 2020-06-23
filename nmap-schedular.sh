@@ -17,13 +17,28 @@ echo "***************************************"
 echo -ne "\e[0m"
 #
 # Check for dependencies
-# TODO
+# Check for nmap(1)
+if ! [ -x "$(command -v nmap)" ]; then
+    echo -e "\e[1;31mERROR: nmap(1) installation not found!\e[0m" 1>&2
+    echo -e "\e[1;31mPlease install nmap(1) " 1>&2
+    echo -e "\e[1;32m# apt update && apt install nmap " 1>&2
+    echo -e "\e[1;33mExiting...\e[0m" 1>&2
+    exit 1
+fi
+# Check for at(1)
+if ! [ -x "$(command -v at)" ]; then
+    echo -e "\e[1;31mERROR: at(1) installation not found!\e[0m" 1>&2
+    echo -e "\e[1;31mPlease install at(1) " 1>&2
+    echo -e "\e[1;32m# apt update && apt install at " 1>&2
+    echo -e "\e[1;33mExiting...\e[0m" 1>&2
+    exit 1
+fi
 
 # Check for root permissions
 if (( EUID != 0 )); then
-   echo -e "\e[1;31mERROR: This script requires sudo (root)!\e[0m" 1>&2
-   echo -e "\e[1;33mExiting...\e[0m" 1>&2
-   exit 1
+    echo -e "\e[1;31mERROR: This script requires sudo (root)!\e[0m" 1>&2
+    echo -e "\e[1;33mExiting...\e[0m" 1>&2
+    exit 1
 fi
 
 #Create the Project directory
