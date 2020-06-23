@@ -1,5 +1,5 @@
 # nmap-schedular
-Schedule an nmap job
+Schedule an nmap job and run it in the background.
 
 ## Requirements
 - nmap
@@ -10,7 +10,7 @@ On apt
 ```
   # apt update && apt install at
 ``` 
-After, you install `at(1)`, make sure you enable the `atd` daemon.
+After you install `at(1)`, make sure you enable the `atd` daemon.
 ```
   # systemctl enable atd
   # systemctl start atd
