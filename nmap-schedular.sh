@@ -202,7 +202,7 @@ do
     case $line in 
         1) NMAP_FLAGS="-sn";;
         2) NMAP_FLAGS="-sS -p80,443,22,23,3389,8080,10443,8000,21,990";;
-        3) NMAP_FLAGS="-sS -sU";;
+        3) NMAP_FLAGS="-sS -sU --top-ports 2000";;
         4) NMAP_FLAGS="-sS";;
         5) NMAP_FLAGS="-sU";;
         6) NMAP_FLAGS="-sS -p-";;
